@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: frontend
+  namespace: expense
+  labels:
+    app: frontend
+    tier: web
+    project: expense
+spec:
+ replicas: 2
+ selector: 
+   matchlabels:
+     app: frontend
+     tier: web
+     project: expense
+   templates:
+     metadata:
+     lables:
+       app: frontend
+       tier: web
+       project: expense
+spec:
+  containers:
+    - name: forntend
+      images: ravi307/frontend:v1
+--
+kind: Service
+apiVersion: v1
+metadata:
+  name: frontend
+  namespace: expense
+spec:
+ type: loadbalancer
+ selector:
+   app: frontend
+   tier: web
+   project: expense
+  prots:
+  - name: frontend-port
+    protocol: TCP
+    port: 80 # service port
+    targetPort: 80 # container port
