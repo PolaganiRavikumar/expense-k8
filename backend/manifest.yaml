@@ -32,9 +32,10 @@ spec:
       containers:
       - name: backend
         image: ravi307/backend:v1
-        envForm: 
-          -ConfigMapRef:
-              name:backend
+    envForm: 
+      -ConfigMapRef:
+          name:backend
+---
 kind: Service
 apiVersion: v1
 metadata:
