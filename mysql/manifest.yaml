@@ -26,7 +26,7 @@ spec:
     image: ravi307/mysql:v1
 ---
 kind: Service
-apiVersion: v1
+apiVersion: app/v1
 metadata: 
   name: mysql
   namespace: expense
