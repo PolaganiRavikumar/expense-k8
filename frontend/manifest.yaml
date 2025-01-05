@@ -24,19 +24,18 @@ spec:
   containers:
     - name: forntend
       images: ravi307/frontend:v1
---
+---
 kind: Service
 apiVersion: v1
 metadata:
-  name: frontend
+  name: backendd
   namespace: expense
 spec:
- type: loadbalancer
- selector:
-   app: frontend
-   tier: web
-   project: expense
-  prots:
+  selector:
+    app: backend
+    tier: web
+    project: expense
+  ports:
   - name: frontend-port
     protocol: TCP
     port: 80 # service port
