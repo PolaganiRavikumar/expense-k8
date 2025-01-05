@@ -117,7 +117,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: ravi307/frontend:v1
+        image: joindevops/frontend:v1
         resources:
           requests:
             cpu: 100m
@@ -145,7 +145,7 @@ metadata:
   name: frontend
   namespace: expense
 spec:
-  type: LoadBalancer
+  #type: LoadBalancer
   selector:
     app: frontend
     tier: web
@@ -169,3 +169,4 @@ spec:
  minReplicas: 1
  maxReplicas: 10
  targetCPUUtilizationPercentage: 15 # usually 75 in real environment
+
