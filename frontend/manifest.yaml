@@ -169,7 +169,7 @@ spec:
  minReplicas: 1
  maxReplicas: 10
  targetCPUUtilizationPercentage: 15 # usually 75 in real environment
- 
+
 apiVersion: elbv2.k8s.aws/v1beta1
 kind: TargetGroupBinding
 metadata:
@@ -179,5 +179,5 @@ spec:
   serviceRef:
     name: frontend # route traffic to the awesome-service
     port: 80
-  targetGroupARN: arn:aws:elasticloadbalancing:us-east-1:315069654700:targetgroup/expense-dev/3a568c998a755e02
+  targetGroupARN: arn:aws:elasticloadbalancing:us-east-1:368753852513:targetgroup/TG-1/96b117d374b0485d
   targetType: ip
